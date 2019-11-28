@@ -1,3 +1,8 @@
 .dropdown_menu {
     border-bottom: 1px solid;
   }
+.dropdown_menu__icon {
+    font-size: 1em;
+    margin-top: 100%;
+    cursor: pointer; 
+}
