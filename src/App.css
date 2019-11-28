@@ -5,14 +5,10 @@ html:first-child {
   height: 100%;
   max-width: 100% !important;
 }
-.row {
+.row_height {
   height: 100%;
 }
 
 .column_sideBar {
   height: 100%;
-}
-
-.dropdown_menu {
-  border-bottom: 1px solid;
 }

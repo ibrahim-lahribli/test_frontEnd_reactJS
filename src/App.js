@@ -1,28 +1,20 @@
 import React from 'react';
 import './App.css';
 import {Container, Row, Col } from 'react-bootstrap';
-import SideBar from './hooks/SideBar'
+import SideBar from './hooks/SideBar';
+import DropdownMenu from './components/DropdownMenu';
+
 function App() {
   return (
     <Container>
-      <Row>
+      <Row className="row_height">
         <Col lg={3} md={3} sm={2} xs={2} className="column_sideBar">
-          <Row>
+          <Row className="row_height">
             <Col lg={2} md={2} sm={2} xs={2}>
-            <SideBar />
+              <SideBar />
             </Col>
             <Col lg={10} md={10} sm={10} xs={10}>
-          <div>
-            <Row className="dropdown_menu" >
-              <Col className="dropdown_menu_label" lg={8} md={8} sm={8} xs={8}>
-                <h4 className="selected_team">marketing team</h4>
-                <span className="team_count">12 members</span>
-              </Col>
-              <Col className="dropdown_menu_icon" lg="auto" md="auto" sm="auto" xs="auto" >
-                 <i className="fa fa-fw fa-home" style={{ fontSize: '1em', marginTop:'100%', cursor:'pointer' }} />
-              </Col>
-            </Row>
-          </div>
+              <DropdownMenu team="marketing team" teamCount="12"/>
             </Col>
           </Row>
         
