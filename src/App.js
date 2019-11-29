@@ -1,10 +1,18 @@
-import React from 'react';
+import React ,{ useState, useEffect, useCallback, useRef }from 'react';
 import './App.css';
 import {Container, Row, Col } from 'react-bootstrap';
 import SideBar from './hooks/SideBar';
 import DropdownMenu from './components/DropdownMenu';
 
 function App() {
+  const storageData = {
+    'My files':['Analytics','Assets','Marketing','Projects'],
+    'Shared with me':[],
+    'Recent':[],
+    'Starred':[],
+    'Trash':[],
+  };
+
   return (
     <Container>
       <Row className="row_height">
@@ -15,6 +23,18 @@ function App() {
             </Col>
             <Col lg={10} md={10} sm={10} xs={10}>
               <DropdownMenu team="marketing team" teamCount="12"/>
+              <h2>Storage</h2>
+                {storageData !== null &&
+                  Object.keys(storageData).map(key => (
+                  <div href="#">
+                    <div>{key}</div>
+                    {
+                      storageData[key].length !== 0 && storageData[key].map(elm =>
+                        <div><i className="fa fa-fw fa-home"/><i className="fa fa-fw fa-home"/><span>{elm}</span></div>
+                      )
+                    }
+                    </div>
+                  ))}
             </Col>
           </Row>
         
